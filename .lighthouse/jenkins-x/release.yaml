@@ -11,7 +11,7 @@ spec:
       taskSpec:
         metadata: {}
         stepTemplate:
-          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/go/release.yaml@versionStream
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/go/release.yaml@5d4de8738f701b186a36b0b4ec14fbb7ecf5d0c6
           name: ""
           resources:
             requests:
@@ -19,7 +19,7 @@ spec:
               memory: 600Mi
           workingDir: /workspace/source
         steps:
-        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone.yaml@versionStream
+        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone.yaml@5d4de8738f701b186a36b0b4ec14fbb7ecf5d0c6
           name: ""
           resources: {}
         - name: next-version
@@ -27,6 +27,8 @@ spec:
         - name: jx-variables
           resources: {}
         - name: build-make-build
+          resources: {}
+        - name: check-registry
           resources: {}
         - name: build-container-build
           resources: {}
