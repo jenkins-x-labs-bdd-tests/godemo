@@ -11,15 +11,15 @@ spec:
       taskSpec:
         metadata: {}
         stepTemplate:
-          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/go/pullrequest.yaml@5d4de8738f701b186a36b0b4ec14fbb7ecf5d0c6
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/go/pullrequest.yaml@6c880d8f2687cc31ab899182cf50bd70df11666f
           name: ""
           resources:
             requests:
-              cpu: 400m
-              memory: 600Mi
+              cpu: 0.1
+              memory: 128Mi
           workingDir: /workspace/source
         steps:
-        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@5d4de8738f701b186a36b0b4ec14fbb7ecf5d0c6
+        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@6c880d8f2687cc31ab899182cf50bd70df11666f
           name: ""
           resources: {}
         - name: jx-variables
@@ -34,5 +34,5 @@ spec:
           resources: {}
   podTemplate: {}
   serviceAccountName: tekton-bot
-  timeout: 240h0m0s
+  timeout: 12h0m0s
 status: {}
