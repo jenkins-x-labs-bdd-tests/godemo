@@ -11,15 +11,15 @@ spec:
       taskSpec:
         metadata: {}
         stepTemplate:
-          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/go/pullrequest.yaml@6c880d8f2687cc31ab899182cf50bd70df11666f
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/go/pullrequest.yaml@versionStream
           name: ""
           resources:
             requests:
-              cpu: 0.1
-              memory: 128Mi
+              cpu: 400m
+              memory: 600Mi
           workingDir: /workspace/source
         steps:
-        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@6c880d8f2687cc31ab899182cf50bd70df11666f
+        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@versionStream
           name: ""
           resources: {}
         - name: jx-variables
